@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="mdc-typography">
   <head>
-    <title>Material Components for the web</title>
+    <title>Übersicht zu Textanalysen bzgl. der Wahlprogramme der Parteien in den Jahren 1949 - 2017</title>
     <link rel="stylesheet"
           href="css/material-components-web.css">
     <style>
@@ -36,14 +36,164 @@
   
   
   <body class="mdc-typography">
-  <h2 class="mdc-typography--display2">Hello, Material Components!</h2>
+  <h2 class="mdc-typography--display2">Textanalysen der Wahlprogramme für die Bundestagswahl in den Jahren 1949 - 2017</h2>
   
   <section id="slider-example" class="example">
   
-  		<h2>Discrete Slider</h2>
+  		<h2>Word clouds der wichtigsten <span id="selected-words">Adjektive</span></h2>
+        
+        <section class="example">
+        
+        <section id="demo-wrapper">
+          <div id="js-select" class="mdc-select" role="listbox" tabindex="0">
+            <span class="mdc-select__selected-text">Wähle einen Worttyp aus...</span>
+            <div class="mdc-simple-menu mdc-select__menu">
+              <ul class="mdc-list mdc-simple-menu__items">
+                <li class="mdc-list-item" role="option" id="grains" aria-disabled="true">
+                  Wähle einen Worttyp aus...
+                </li>
+                <li class="mdc-list-item" role="option" id="adj20" aria-selected="true" tabindex="0">
+                  Adjektive
+                </li>
+                <li class="mdc-list-item" role="option" id="nouns20" tabindex="0">
+                  Substantive
+                </li>
+                <li class="mdc-list-item" role="option" id="verb20" tabindex="0">
+                  Verben
+                </li>
+                <li class="mdc-list-item" role="option" id="pron10" tabindex="0">
+                  Pronomen
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+        
+        <div id="word_cloud_viewers">
+			<p>
+			<img src="results/adj20/buwa_CDU_2017.png" id="word_cloud_viewer1" alt="">
+			<img src="results/adj20/buwa_SPD_2017.png" id="word_cloud_viewer2" alt="">
+			<img src="" id="word_cloud_viewer3" alt="">
+			</p>
+			<p>
+			<img src="" id="word_cloud_viewer4" alt="">
+			<img src="" id="word_cloud_viewer5" alt="">
+			<img src="" id="word_cloud_viewer6" alt="">
+			</p>
+		</div>
+		
         <div class="slider-example">
-          <p id="example-ds-label">Selected Year: <span id="discrete-slider-value">2017</span> </p>
+           
           
+          <div class="mdc-form-field">
+		  <div class="mdc-checkbox" id="checkCDU">
+		    <input type="checkbox"
+		           id="checkCDUinp"
+		           class="mdc-checkbox__native-control"/>
+		    <div class="mdc-checkbox__background">
+		      <svg class="mdc-checkbox__checkmark"
+		           viewBox="0 0 24 24">
+		        <path class="mdc-checkbox__checkmark__path"
+		              fill="none"
+		              stroke="white"
+		              d="M1.73,12.91 8.1,19.28 22.79,4.59"/>
+		      </svg>
+		      <div class="mdc-checkbox__mixedmark"></div>
+		    </div>
+		  </div>
+		  <label for="checkCDUinp">CDU</label>
+		</div>
+		<div class="mdc-form-field">
+		  <div class="mdc-checkbox" id="checkSPD">
+		    <input type="checkbox"
+		           id="checkSPDinp"
+		           class="mdc-checkbox__native-control"/>
+		    <div class="mdc-checkbox__background">
+		      <svg class="mdc-checkbox__checkmark"
+		           viewBox="0 0 24 24">
+		        <path class="mdc-checkbox__checkmark__path"
+		              fill="none"
+		              stroke="white"
+		              d="M1.73,12.91 8.1,19.28 22.79,4.59"/>
+		      </svg>
+		      <div class="mdc-checkbox__mixedmark"></div>
+		    </div>
+		  </div>
+		  <label for="checkSPDinp">SPD</label>
+		</div>
+        <div class="mdc-form-field">
+		  <div class="mdc-checkbox" id="checkGreen">
+		    <input type="checkbox"
+		           id="checkGreeninp"
+		           class="mdc-checkbox__native-control"/>
+		    <div class="mdc-checkbox__background">
+		      <svg class="mdc-checkbox__checkmark"
+		           viewBox="0 0 24 24">
+		        <path class="mdc-checkbox__checkmark__path"
+		              fill="none"
+		              stroke="white"
+		              d="M1.73,12.91 8.1,19.28 22.79,4.59"/>
+		      </svg>
+		      <div class="mdc-checkbox__mixedmark"></div>
+		    </div>
+		  </div>
+		  <label for="checkGreeninp">Grüne</label>
+		</div>
+		<div class="mdc-form-field">
+		  <div class="mdc-checkbox" id="checkLinke">
+		    <input type="checkbox"
+		           id="checkLinkeinp"
+		           class="mdc-checkbox__native-control"/>
+		    <div class="mdc-checkbox__background">
+		      <svg class="mdc-checkbox__checkmark"
+		           viewBox="0 0 24 24">
+		        <path class="mdc-checkbox__checkmark__path"
+		              fill="none"
+		              stroke="white"
+		              d="M1.73,12.91 8.1,19.28 22.79,4.59"/>
+		      </svg>
+		      <div class="mdc-checkbox__mixedmark"></div>
+		    </div>
+		  </div>
+		  <label for="checkLinkeinp">Linke</label>
+		</div>
+		<div class="mdc-form-field">
+		  <div class="mdc-checkbox" id="checkFDP">
+		    <input type="checkbox"
+		           id="checkFDPinp"
+		           class="mdc-checkbox__native-control"/>
+		    <div class="mdc-checkbox__background">
+		      <svg class="mdc-checkbox__checkmark"
+		           viewBox="0 0 24 24">
+		        <path class="mdc-checkbox__checkmark__path"
+		              fill="none"
+		              stroke="white"
+		              d="M1.73,12.91 8.1,19.28 22.79,4.59"/>
+		      </svg>
+		      <div class="mdc-checkbox__mixedmark"></div>
+		    </div>
+		  </div>
+		  <label for="checkFDPinp">FDP</label>
+		</div>
+		<div class="mdc-form-field">
+		  <div class="mdc-checkbox" id="checkAFD">
+		    <input type="checkbox"
+		           id="checkAFDinp"
+		           class="mdc-checkbox__native-control"/>
+		    <div class="mdc-checkbox__background">
+		      <svg class="mdc-checkbox__checkmark"
+		           viewBox="0 0 24 24">
+		        <path class="mdc-checkbox__checkmark__path"
+		              fill="none"
+		              stroke="white"
+		              d="M1.73,12.91 8.1,19.28 22.79,4.59"/>
+		      </svg>
+		      <div class="mdc-checkbox__mixedmark"></div>
+		    </div>
+		  </div>
+		  <label for="checkAFDinp">AfD</label>
+		</div>
+		<p id="example-ds-label">Aktuell ausgewähltes Jahr: <span id="discrete-slider-value">2017</span> für </p>
           <div class="example-slider-wrapper">
             <div id="discrete-mdc-slider" class="mdc-slider mdc-slider--discrete" tabindex="0" role="slider"
                  aria-valuemin="0" aria-valuemax="100" aria-valuenow="50" tick-interval=10
@@ -67,10 +217,7 @@
           </div>
 
         </div>
-  	</section>  
-    <input type="range" min="1" max="5" value="1" step="1" onchange="showValue(this.value)" />
-	
-	<p><img src="./images/bild1.png" id="range" alt=""></p>
+  	</section> 
 	
 	<script src="css/material-components-web.js"></script>
     <script>
@@ -91,61 +238,127 @@
         	    return locationOf(element, array, start, pivot);
         	  }
         	};
-    	 
-        function initDemo(demoRoot) {
-          var min = demoRoot.querySelector('[name="min"]');
-          var max = demoRoot.querySelector('[name="max"]');
-          var step = demoRoot.querySelector('[name="step"]');
-          var darkTheme = demoRoot.querySelector('[name="dark-theme"]');
-          var disabled = demoRoot.querySelector('[name="disabled"]');
-          var useCustomColor = demoRoot.querySelector('[name="use-custom-color"]');
-          var rtl = demoRoot.querySelector('[name="rtl"]');
 
+
+        function initDemo(demoRoot) {
           var discreteValue = demoRoot.querySelector('#discrete-slider-value');
           var discreteCommittedValue = demoRoot.querySelector('#discrete-slider-committed-value');
           var discreteSliderEl = demoRoot.querySelector('#discrete-mdc-slider');
           var discreteSlider = new mdc.slider.MDCSlider(discreteSliderEl);
+		  var checkboxCDU =  new mdc.checkbox.MDCCheckbox(demoRoot.querySelector('#checkCDU'));
+		  var checkboxSPD =  new mdc.checkbox.MDCCheckbox(demoRoot.querySelector('#checkSPD'));
+		  var checkboxGreen =  new mdc.checkbox.MDCCheckbox(demoRoot.querySelector('#checkGreen'));
+		  var checkboxLinke =  new mdc.checkbox.MDCCheckbox(demoRoot.querySelector('#checkLinke'));
+		  var checkboxFDP =  new mdc.checkbox.MDCCheckbox(demoRoot.querySelector('#checkFDP'));
+		  var checkboxAFD =  new mdc.checkbox.MDCCheckbox(demoRoot.querySelector('#checkAFD'));
+		  
+		  var MDCSelect = mdc.select.MDCSelect;
+		  var currentlySelected = document.getElementById('currently-selected');
+		  var currentlySelectedTag = document.getElementById('selected-words');
+	      var root = document.getElementById('js-select');
+	      var select = MDCSelect.attachTo(root);
+
 		  discreteSlider.max = 2017;
 		  discreteSlider.min = 1949;
 		  discreteSlider.step = 1;
-		  discreteSlider.value = 2017;       
+		  discreteSlider.value = 2017;
+
+		  select.value = "adj20";
+
+		  checkboxCDU.foundation_.setChecked(true)       
+		  checkboxSPD.foundation_.setChecked(true)
 
 		  var allowed_years = [1949, 1953, 1957, 1961, 1965, 1969,
 							  1972, 1976, 1980, 1983, 1987, 1990,
 				              1994, 1998, 2002, 2005, 2009, 2013, 2017];
 
+		  
+	        function update_word_cloud(key, party, year, vnum){
+				var fname = "results/"+key+"/buwa_" + party + "_" + year.toString() + ".png";
+				var viewer = document.getElementById("word_cloud_viewer" + vnum.toString())
+	        	
+
+				function imageExists(image_url){
+
+				    var http = new XMLHttpRequest();
+
+				    http.open('HEAD', image_url, false);
+				    http.send();
+
+				    return http.status != 404;
+
+				}
+
+				if (imageExists(fname)){
+					viewer.src= fname;
+					}
+				else {viewer.src = "results/buwa_blank.png"}
+				
+	        	};
+	                
+	        function update_pics(year, type_key) {
+	        	var party = "CDU";
+				var viewer_num = 1;
+
+	        	if (checkboxCDU.foundation_.isChecked()){update_word_cloud(type_key, "CDU", year, viewer_num);viewer_num++;}
+	        	if (checkboxSPD.foundation_.isChecked()){update_word_cloud(type_key, "SPD", year, viewer_num);viewer_num++;}
+	        	if (checkboxGreen.foundation_.isChecked()){update_word_cloud(type_key, "Green", year, viewer_num);viewer_num++;}
+	        	if (checkboxLinke.foundation_.isChecked()){update_word_cloud(type_key, "Linke", year, viewer_num);viewer_num++;}
+	        	if (checkboxFDP.foundation_.isChecked()){update_word_cloud(type_key, "FDP", year, viewer_num);viewer_num++;}
+	        	if (checkboxAFD.foundation_.isChecked()){update_word_cloud(type_key, "AFD", year, viewer_num);viewer_num++;}
+	        };
+
+	      root.addEventListener('MDCSelect:change', function() {
+		          var cur_val = discreteSlider.value;
+		          var cur_key = select.value;
+		          var item = select.selectedOptions[0];
+		          var index = select.selectedIndex;
+				  update_pics(cur_val, cur_key);
+				  currentlySelectedTag.textContent = item.textContent;
+		        });
+	        
 		  discreteSlider.listen('MDCSlider:input', function() {
 	            discreteValue.textContent = discreteSlider.value;
+
+	            var cur_val = discreteSlider.value;
+	            cur_val = allowed_years[locationOf(cur_val, allowed_years,0, cur_val)];
+
+				update_pics(cur_val, select.value);
 	          });
 
           discreteSlider.listen('MDCSlider:change', function() {
-            var cur_val = discreteSlider.value
+            var cur_val = discreteSlider.value;
             cur_val = allowed_years[locationOf(cur_val, allowed_years,0, cur_val)];
             discreteValue.textContent = cur_val; 
             discreteSlider.value = cur_val;
+            update_pics(cur_val, select.value);
           });
 
+          document.getElementById('checkCDU').addEventListener('click', function() {
+              update_pics(discreteSlider.value, select.value);
+            });
+
+          document.getElementById('checkSPD').addEventListener('click', function() {
+              update_pics(discreteSlider.value, select.value);
+            });    
+
+          document.getElementById('checkGreen').addEventListener('click', function() {
+              update_pics(discreteSlider.value, select.value);
+            });    
+
+          document.getElementById('checkLinke').addEventListener('click', function() {
+              update_pics(discreteSlider.value, select.value);
+            });    
+
+          document.getElementById('checkFDP').addEventListener('click', function() {
+              update_pics(discreteSlider.value, select.value);
+            });    
+
+          document.getElementById('checkAFD').addEventListener('click', function() {
+              update_pics(discreteSlider.value, select.value);
+            });    
 		  }
       })();
     </script>
-	 
-	<script type="text/javascript">
-
-	function showValue(newValue)
-	{
-	    var bild="./images/bild1.png";
-	   
-	    switch (newValue)
-	    {
-	       case '0': bild='./images/bild1.png'; break;
-	       case '1': bild='./images/bild2.png'; break;
-	       case '2': bild='./images/bild3.png'; break;
-	       case '3': bild='./images/bild4.png'; break;
-	       case '4': bild='./images/bild5.png'; break;
-	    }
-	 
-	    document.getElementById("range").src=bild;
-	}
-	</script>
   </body>
 </html>
