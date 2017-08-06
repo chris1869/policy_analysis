@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html class="mdc-typography">
+  <head>
+    <title>Material Components for the web</title>
+    <link rel="stylesheet"
+          href="node_modules/material-components-web/dist/material-components-web.css">
+  </head>
+  <body>
+  
+    <h2 class="mdc-typography--display2">Hello, Material Components!</h2>
+    <div class="mdc-textfield" data-mdc-auto-init="MDCTextfield">
+      <input type="text" class="mdc-textfield__input" id="demo-input">
+      <label for="demo-input" class="mdc-textfield__label">Tell us how you feel!</label>
+    </div>
+    <script src="node_modules/material-components-web/dist/material-components-web.js"></script>
+    <script>mdc.autoInit()</script>
+	<input type="range" min="1" max="5" value="1" step="1" onchange="showValue(this.value)" />
+	
+	<p><img src="./images/bild1.png" id="range" alt=""></p>
+	 
+	<script type="text/javascript">
+	function showValue(newValue)
+	{
+	    var bild="./images/bild1.png";
+	   
+	    switch (newValue)
+	    {
+	       case '0': bild='./images/bild1.png'; break;
+	       case '1': bild='./images/bild2.png'; break;
+	       case '2': bild='./images/bild3.png'; break;
+	       case '3': bild='./images/bild4.png'; break;
+	       case '4': bild='./images/bild5.png'; break;
+	    }
+	 
+	    document.getElementById("range").src=bild;
+	}
+	</script>
+  </body>
+</html>
