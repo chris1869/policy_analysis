@@ -22,7 +22,7 @@ def lexical_diversity(my_text_data):
     diversity_score = vocab_size / word_count
     return diversity_score
 
-def unusual_words(text, nltk_data_dir="/home/christian/nltk_data/"):
+def unusual_words(text, nltk_data_dir="/usr/share/nltk_data/"):
     text_vocab = set(text)
     
     reader = EuroparlCorpusReader(nltk_data_dir + "corpora/europarl_raw/german",

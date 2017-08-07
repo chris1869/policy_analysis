@@ -15,7 +15,7 @@ def read_txt_doc(fname):
     return doc
     
 def get_tags(doc):
-    tagger = treetaggerwrapper.TreeTagger(TAGLANG='de', TAGDIR="/home/christian/nltk_data/tree_tagger")
+    tagger = treetaggerwrapper.TreeTagger(TAGLANG='de', TAGDIR="/opt/tree_tagger")
     tags = tagger.tag_text(doc.decode("utf-8"))
     return treetaggerwrapper.make_tags(tags)
     
